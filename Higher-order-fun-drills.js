@@ -52,7 +52,7 @@ let x = turtleMovement.filter(moveBackward);
 let y = x.forEach(numberOfSteps);
 
 //REDUCE 
-const reducer = (accumulator = [],currentValur = [],arr) => {    
+const reducer = (accumulator = [],arr) => {    
     for(let i = 0; i < arr.length; i++){
         //console.log( arr[i].length );                
         if(arr[i].length === 3)
@@ -65,42 +65,29 @@ const reducer = (accumulator = [],currentValur = [],arr) => {
 }
 
 let str = 'noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest'.split(' ');
-console.log(reducer( [],[] ,str).join(''));
+console.log(reducer( [],str).join(''));
 
+//Functions as arguments (2)
+// Return only names that begin with 'R'
+const myNames = ['Rich', 'Joe', 'Bhaumik', 'Ray'];
+const filteredNames = filter(myNames, function(name) {
+    // This is a "predicate function" - it's a function that only returns a boolean
+    return name[0] === 'R';
+});
+console.log(filteredNames) // => ['Rich', 'Ray']
+// <---- DO NOT EDIT BETWEEN THESE LINES
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// //Functions as arguments (2)
-// // Return only names that begin with 'R'
-// const myNames = ['Rich', 'Joe', 'Bhaumik', 'Ray'];
-// const filteredNames = filter(myNames, function(name) {
-//     // This is a "predicate function" - it's a function that only returns a boolean
-//     return name[0] === 'R';
-// });
-// console.log(filteredNames) // => ['Rich', 'Ray']
-// // <---- DO NOT EDIT BETWEEN THESE LINES
-
-// // TASK: DEFINE YOUR FILTER FUNCTION BELOW:
-// function filter(arr,fn){
-//     let newArray = [];
-//     for(let i= 0; i < arr.length ; i++){
-//         if(fn(arr[i]) === true)
-//             newArray.push(arr[i]);
-//     }
-//     return newArray;
-// }
-
-// filter(myNames,filteredNames); //thorws error check later 
+// TASK: DEFINE YOUR FILTER FUNCTION BELOW:
+function filter(arr,fn){
+    let newArray = [];
+    for(let i= 0; i < arr.length ; i++){
+        if(fn(arr[i]) === true)
+            newArray.push(arr[i]);
+    }
+    return newArray;
+}
+function nameFilter(name){
+    console.log(name);    
+    if(name[0] === 'B') return true;    
+}
+console.log(filter(myNames,nameFilter)); 
