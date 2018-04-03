@@ -36,25 +36,71 @@ hailstonesWarning('Piscataway');
 stormWarning('Albany');
 stormWarning('Peoria');
 
+//forEach, filter and map
+let turtleMovement = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
+function moveBackward(arr){
+    if(arr[0] < 0 || arr[1] < 0)
+        return false;
+    else 
+        return arr;
+}
+function numberOfSteps(arr){
+    console.log(arr);
+    console.log(arr[0] + arr[1]);
+}
+let x = turtleMovement.filter(moveBackward);
+let y = x.forEach(numberOfSteps);
 
-//Functions as arguments (2)
-// Return only names that begin with 'R'
-const myNames = ['Rich', 'Joe', 'Bhaumik', 'Ray'];
-const filteredNames = filter(myNames, function(name) {
-    // This is a "predicate function" - it's a function that only returns a boolean
-    return name[0] === 'R';
-});
-console.log(filteredNames) // => ['Rich', 'Ray']
-// <---- DO NOT EDIT BETWEEN THESE LINES
+//REDUCE 
+const reducer = (accumulator = [],currentValur = [],arr) => {    
+    for(let i = 0; i < arr.length; i++){
+        //console.log( arr[i].length );                
+        if(arr[i].length === 3)
+            accumulator.push(' ');  
+        else
+            accumulator.push(arr[i][arr[i].length - 1].toUpperCase());        
 
-// TASK: DEFINE YOUR FILTER FUNCTION BELOW:
-function filter(arr,fn){
-    let newArray = [];
-    for(let i= 0; i < arr.length ; i++){
-        if(fn(arr[i]) === true)
-            newArray.push(arr[i]);
     }
-    return newArray;
+    return accumulator;
 }
 
-filter(myNames,filteredNames); //thorws error check later 
+let str = 'noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest'.split(' ');
+console.log(reducer( [],[] ,str).join(''));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// //Functions as arguments (2)
+// // Return only names that begin with 'R'
+// const myNames = ['Rich', 'Joe', 'Bhaumik', 'Ray'];
+// const filteredNames = filter(myNames, function(name) {
+//     // This is a "predicate function" - it's a function that only returns a boolean
+//     return name[0] === 'R';
+// });
+// console.log(filteredNames) // => ['Rich', 'Ray']
+// // <---- DO NOT EDIT BETWEEN THESE LINES
+
+// // TASK: DEFINE YOUR FILTER FUNCTION BELOW:
+// function filter(arr,fn){
+//     let newArray = [];
+//     for(let i= 0; i < arr.length ; i++){
+//         if(fn(arr[i]) === true)
+//             newArray.push(arr[i]);
+//     }
+//     return newArray;
+// }
+
+// filter(myNames,filteredNames); //thorws error check later 
