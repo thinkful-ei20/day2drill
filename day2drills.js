@@ -32,7 +32,7 @@ console.log(min(num));
 function average(numbers){
     let sum =0 ;
     numbers.forEach(num => sum+=num)
-    return sum/numbers.length;
+    return sum;
 }
 
 let numberForAvgFun = [2,3,4,5,6];
