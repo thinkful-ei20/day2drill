@@ -29,3 +29,11 @@ console.log(max(num));
 console.log(min(num));
 
 //Compute Average
+function average(numbers){
+    let sum =0 ;
+    numbers.forEach(num => sum+=num)
+    return sum/numbers.length;
+}
+
+let numberForAvgFun = [2,3,4,5,6];
+console.log(average(numberForAvgFun));
