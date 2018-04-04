@@ -51,6 +51,10 @@ function numberOfSteps(arr){
 let x = turtleMovement.filter(moveBackward);
 let y = x.forEach(numberOfSteps);
 
+//
+let turtleMovement = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
+turtleMovement.filter(turtle => turtle.forEach(direction => direction >= 0));
+
 //REDUCE 
 const reducer = (accumulator = [],arr) => {    
     for(let i = 0; i < arr.length; i++){
