@@ -91,3 +91,5 @@ function nameFilter(name){
     if(name[0] === 'B') return true;    
 }
 console.log(filter(myNames,nameFilter)); 
+
+// test comment 
